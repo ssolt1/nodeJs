@@ -1,0 +1,42 @@
+JSON book
+
+Two terms that you will often hear about when JSON is turned into text from an object and then from an object back into text are serialization and deserialization. Serialization is the act of converting the object into text. Deserialization is the act of converting the text back into an object.
+
+In Example 6-5, the JavaScript is deserializing with JSON.parse(). In the responseText, the JSON is simply text as a data interchange format. Once it is parsed by JSON.parse(), it is no longer JSON, but a JavaScript object.
+
+
+// the JSON response deserialized 
+var myObject = JSON.parse(myXMLHttpRequest.responseText); 
+
+// The object serialized
+var myJSON = JSON.stringify(myObject); 
+
+
+This deserialization with JSON.parse() is necessary because the JSON is not yet an object. Remember that JSON stands for JavaScript Object Notation. While it is in its JSON form, it is a literal representation of an object in the form of text. In order for JSON to become a real object, it must be deserialized. In JavaScript, we can also serialize the JSON with JSON.stringify().
+
+In Example 6-6, the myObject variable gets the deserialized JSON. This is now an object. The myJSON variable gets the serialized object. This is now JSON.
+
+Example 6-6. Object deserialized and then serialized
+// the JSON response deserialized 
+var myObject = JSON.parse(myXMLHttpRequest.responseText); 
+
+// The object serialized
+var myJSON = JSON.stringify(myObject); 
+Finally, the last two lines in my example are setting up the request and then sending it via the HTTP protocol (Example 6-7).
+
+Example 6-7. The request for JSON is set up and sent
+myXMLHttpRequest.open("GET", url, true);
+myXMLHttpRequest.send();
+You may find it strange that the code that handles the JSON response appears before the request is sent. I even talked about it before I talked about the request being set up and sent. The function value of the onreadystatechange property is an EventHandler. The underlying JavaScript engine (not my code) has logic to access the properties value (my function) every time the ready state changes. The ready states from 0–4 are:
+
+0 for UNSENT
+The state before the open() function has been executed.
+1 for OPENED
+The state after the open() function has been executed but before send() has been executed.
+2 for HEADERS_RECEIVED
+The state after the send() function has been executed and headers and status are available.
+3 for LOADING
+The headers have been received but the response text is still being retrieved.
+4 for DONE
+Complete; the full message with headers and body has been received.
+

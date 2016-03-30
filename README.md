@@ -1,2 +1,2 @@
 # nodeJs
-repo for node.js projects and practice
+repo for node.js projects and API practice.
