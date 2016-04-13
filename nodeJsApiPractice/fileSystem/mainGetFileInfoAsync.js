@@ -13,7 +13,7 @@ fs.stat('input.txt', function (err, stats) {
    console.log("isDirectory ? " + stats.isDirectory());
 });
 
-/*steves@druk-omen4:~/Documents/repositories/nodeJsPractice/fileSystem$ node main.js
+/*$ node main.js
 Going to get file info!
 { dev: 2057,
   mode: 33204,
