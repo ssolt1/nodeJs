@@ -12,12 +12,12 @@ var server = net.createServer(function(connection) {
 });
 
 /* Needed to open port 8080 on server
-steves@druk-omen4:~/Documents/repositories/nodeJsPractice/net$ node server.js
+<server>$ node server.js
 server is listening
 client connected
 client disconnected
 
-steves@ABBY:~/Documents/repositories/nodeJsPractice/net$ node client.js
+<client>$ node client.js
 connected to server!
 Hello World!
 
