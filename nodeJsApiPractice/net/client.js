@@ -10,9 +10,9 @@ client.on('end', function() {
    console.log('disconnected from server');
 });
 
-/* on abby, add the host info in line 2
+/* on client, add the host info in line 2
 var net = require('net');
-var client = net.connect({host: 'druk-omen4', port: 8080}, function() {
+var client = net.connect({host: '<hostname>', port: XXXX}, function() {
 	   console.log('connected to server!');
 });
 
